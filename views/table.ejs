@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+<body>
+<input>
+<a href="/contact/addc"><button >Add</button></a>
+<table cellspacing="15">
+  <thead>
+   <th>Name</th>
+   <th>Email</th>
+   <th>Mobile</th>
+   <th>Course</th>
+   <th>Description</th>
+  </thead>
+  <tbody>
+  <%  for(i=0; i < data.length; i++){%>
+  <tr>
+  <td> <%= data[i].name %></td>
+  <td> <%= data[i].email %></td>
+  <td> <%= data[i].number %></td>
+  <td> <%= data[i].course %></td>
+  <td> <%= data[i].describe %></td>
+  <td>
+  <a href="/contact/fetchdata/<%= data[i]._id%>">Edit</a>
+  <a href="/contact/deletedata/<%= data[i]._id%>">Delete</a>
+  </td>
+  </tr>
+  <% } %>
+  </tbody>
+  </table>
+
+
+</body>
+</html>

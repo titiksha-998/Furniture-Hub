@@ -1,0 +1,121 @@
+<!-- Bootstrap -->
+<!Doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Furniture</title>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" data-toggle="modal" data-target="#exampleModal">Sign in</a>
+        <button class="navbar-toggler" type="button" onclick="myfunc()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+		 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" data-toggle="modal" data-target="#examplemodal2">Sign Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" onclick="myfunc2()"data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		 
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About us</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="/contact">Contact us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Contact Us on various platforms
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Facebook</a>
+                <a class="dropdown-item" href="#">E-mail</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Linked In</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/services" tabindex="-1" aria-disabled="true">Services</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link " href="/portfolio" tabindex="-1" aria-disabled="true">Portfolio</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link " href="/team" tabindex="-1" aria-disabled="true">Team</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+	  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Signin now for exclusive furniture!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%- include sign.ejs %>
+      </div>
+      <div class="modal-footer">
+	       <a class="" data-toggle="modal" onclick="myfunc()"   data-target="#examplemodal2">Sign Up</a>
+	      
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+	  <!-- Modal2 -->
+<div class="modal" tabindex="-1" role="dialog" id="examplemodal2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up for Exclusive furniture</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <%- include signup.ejs %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- two modals don't show up together hide back one-->
+<script>
+function myfunc(){
+$('#exampleModal').modal('hide')
+$('#examplemodal2').modal('show')
+}
+function myfunc2(){
+$('#exampleModal').modal('show')
+$('#examplemodal2').modal('hide')
+}
+</script>
+    </header>
+	</head>
+	</html>

@@ -1,0 +1,48 @@
+<%- include header.ejs %>
+<%- include footer.ejs %>
+  <body>
+    <h1>This is contact us</h1>
+	<div class="container">
+	<div class="row">
+	  <div class="col-lg-3">
+	  </div>
+	  <div class="col-lg-6">
+	  <form action="/contact/editdata" method="post">
+	   <input type="hidden" class="form-control" name="id" id="id"  placeholder=" Enter Email" value="<%= data._id%>">
+  <div class="form-group">
+    <label for="Name">Enter Name:</label>
+    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" value="<%= data.name%>" placeholder="Enter name">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="Enter Email:">Enter Email</label>
+    <input type="email" class="form-control" name="Email" id="email" placeholder=" Enter Email" value="<%= data.email%>">
+  </div>
+  <div class="form-group">
+    <label for="Enter Contact No.:">Enter Contact No.:</label>
+    <input type="" class="form-control" name="number" id="number" placeholder=" Enter Contact No." value="<%= data.number%>">
+  </div>
+  <div class="form-group">
+  <label class="course">Courses</label>
+  <select class="form-control" id="course" name="course">
+  <option value="MEAN"<% if(data.course == 'mean'){ %> selected<%} %>>MEAN</option>
+  <option value="Python"<% if(data.course == 'mean'){ %> selected<%} %>>Python</option>
+  <option value="Java"<% if(data.course == 'mean'){ %> selected<%} %>>JAVA</option>
+  <option value="Ruby"<% if(data.course == 'mean'){ %> selected<%} %>>Ruby</option>
+</select>
+  </div>
+  
+   <div class="form-group">
+    <label for="Enter your Description:">Enter your Description:</label>
+    <textarea class="form-control" name="describe" id="describe" placeholder=" Enter your Description"><%= data.describe%></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  <div class="col-lg-3">
+  </div>
+  </div>
+  </div>
+	  <%- include footer.ejs %>
+  </body>
+</html>
